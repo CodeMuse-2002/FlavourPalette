@@ -1,4 +1,9 @@
 package com.app.pojos;
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 //ALTER TABLE users DROP CONSTRAINT users_chk_1;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -20,7 +25,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true, exclude = {"password"})
 @Table(name = "users")
-public class User extends BaseEntity{
+public class User extends BaseEntity implements UserDetails{
 	@Column(name = "first_name", length = 20)
 	private String firstName;
 	@Column(name = "last_name", length = 20)
@@ -47,6 +52,16 @@ public class User extends BaseEntity{
 		this.email = email;
 		this.password = password;
 		this.role = role;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		return getEmail();
 	}
 	
 	
