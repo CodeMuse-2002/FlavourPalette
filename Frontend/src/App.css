@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+  
+.About,
+.services,
+.Contacts,
+.SignIn
+ {
+  display: flex;
+  height: 95vh;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 3rem; */
+}
+
+.SignIn11
+ {
+  display: flex;
+  height: 105vh;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 3rem; */
+}
+
+.Services {
+  /* background-image: url('/public/images/img-2.jpg'); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.About {
+  /* background-image: url('/public/images/img-1.jpg'); */
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.Contacts {
+  /* background-image: url('/public/images/c2.jpg'); */
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.SignIn {
+  /* background-image: url('/public/images/signbakground.jpg'); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+    color: black; 
+   /*font-size: 30px;  */
+   align-content: center;
+  align-items: center; 
+ } 
+
+ .SignIn11 {
+  /* background-image: url('/public/images/signbakground.jpg'); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+    color: black; 
+   /*font-size: 30px;  */
+   align-content: center;
+  align-items: center; 
+ } 
+
+
+.App {
+  background-color: #eee;
+  width: 100vw;
+  height: 0vh;
+}
+
+.search-bar-container {
+  padding-top: 1vh;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+}
+
+.location
+-container {
+  padding-top: 1vh;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+}
+
+
