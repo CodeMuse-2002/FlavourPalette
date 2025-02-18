@@ -23,16 +23,16 @@ import com.app.service.ProductService;
 public class ProductController {
 	@Autowired
 	private ProductService productService;
-//	@CrossOrigin(origins = "http://localhost:3000")
-//	@PostMapping
-//	public ResponseEntity<?> addNewProduct(@RequestBody ProductRequestDTO dto){
-//		System.out.println("in add new Product" + dto);
-//		try {
-//			return ResponseEntity.status(HttpStatus.CREATED).body(productService.addProduct(dto));
-//		}catch(RuntimeException e) {
-//			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
-//		}
-//	}
+	@CrossOrigin(origins = "http://localhost:3000")
+	@PostMapping
+	public ResponseEntity<?> addNewProduct(@RequestBody ProductRequestDTO dto){
+		System.out.println("in add new Product" + dto);
+		try {
+			return ResponseEntity.status(HttpStatus.CREATED).body(productService.addProduct(dto));
+		}catch(RuntimeException e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
+		}
+	}
 	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping
 	public ResponseEntity<?> getAllProducts()

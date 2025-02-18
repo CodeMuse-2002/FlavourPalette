@@ -19,12 +19,11 @@ import com.app.service.OrderService;
 
 
 @RestController
-@RequestMapping("/orders")
 public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	@CrossOrigin(origins = "http://localhost:3000")
-	@PostMapping("/place")
+	@PostMapping("/customer/place")
 	public ResponseEntity<?> placeOrder(@RequestBody OrderPlacedDTO dto)
 	{
 		System.out.println("in order placed");
@@ -36,7 +35,7 @@ public class OrderController {
 		}
 	}
 	
-	@GetMapping()
+	@GetMapping("/admin/orders")
     public ResponseEntity<?> getAllOrders() {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(orderService.getAllOrders());

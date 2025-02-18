@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.dto.AuthRequest;
+import com.app.dto.AuthResponse;
 import com.app.dto.EditProfileDTO;
 import com.app.dto.UserRegister;
 import com.app.service.UserService;
@@ -25,11 +26,19 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+//	@CrossOrigin(origins = "http://localhost:3000")
+//	@PostMapping("/signin")
+//	public ResponseEntity<?> userSignIn(@RequestBody @Valid AuthRequest dto){
+//		System.out.println("in user sign in");
+//		return ResponseEntity.ok(userService.signIn(dto));
+//	}
+	
 	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/signin")
 	public ResponseEntity<?> userSignIn(@RequestBody @Valid AuthRequest dto){
-		System.out.println("in user sign in");
-		return ResponseEntity.ok(userService.signIn(dto));
+	    System.out.println("In user sign-in");
+	    AuthResponse response = userService.signIn(dto);
+	    return ResponseEntity.ok(response);
 	}
 	
 	@CrossOrigin(origins = "http://localhost:3000")

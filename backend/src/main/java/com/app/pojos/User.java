@@ -1,5 +1,6 @@
 package com.app.pojos;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +14,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,10 +24,11 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true, exclude = {"password"})
 @Table(name = "users")
-public class User extends BaseEntity implements UserDetails{
+public class User extends BaseEntity{
 	@Column(name = "first_name", length = 20)
 	private String firstName;
 	@Column(name = "last_name", length = 20)
@@ -52,16 +55,6 @@ public class User extends BaseEntity implements UserDetails{
 		this.email = email;
 		this.password = password;
 		this.role = role;
-	}
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
-	}
-
-	@Override
-	public String getUsername() {
-		return getEmail();
 	}
 	
 	

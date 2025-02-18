@@ -1,5 +1,7 @@
 package com.app.dto;
 
+import com.app.pojos.UserRole;
+
 import jakarta.validation.constraints.Email;
 
 import jakarta.validation.constraints.NotBlank;
@@ -18,4 +20,5 @@ public class AuthRequest {
 	@NotBlank(message = "Password must be not blank")
 	@Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[#@$*]).{5,20})", message = "Invalid Password format!!!!")
 	private String password;
+	private UserRole role;
 }
